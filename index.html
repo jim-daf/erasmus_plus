@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erasmus+ ΔΠΘ</title>
+    <title data-lang-en="Erasmus+ DUTH" data-lang-el="Erasmus+ ΔΠΘ">Erasmus+ ΔΠΘ</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -120,6 +120,7 @@
         justify-items: center;
         justify-content: space-between;
         */
+        
        }
 
        .nav-bar ul li img:hover{
@@ -137,7 +138,7 @@
 </head>
 
 <body>
-  <div class="nav-bar2 nav-bar3" style="background-color: #fff;">
+  <div class="nav-bar2 nav-bar3" style="background-color: #d8d8d8e8;">
     <ul>
       
       
@@ -159,7 +160,7 @@
 
     </ul>
   </div>
-  <div class="nav-bar2" style="background-color: #fff;">
+  <div class="nav-bar2" style="background-color: #d8d8d8e8;">
       <ul>
         
         <li id="logo_dimokritus" style="box-shadow: none;" ><img  src="images/Democritus_University_of_Thrace_New_Logo.png"  alt="" style="width: 90px; "></li>
@@ -295,7 +296,7 @@
                 <li class="dropdown-item"><a href="#" style="font-size: 15px;" data-lang-en = "USEFUL DOCUMENTS" data-lang-el="ΧΡΗΣΙΜΑ ΕΝΤΥΠΑ">ΧΡΗΣΙΜΑ ΕΝΤΥΠΑ</a></li>
               </ul>
             </li>
-            <li><a href="contact.html" data-lang-en = "COMMUNICATE WITH US" data-lang-el="ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ">ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ</a></li>
+            <li><a href="contact.html" data-lang-en = "COMMUNICATE WITH US" data-lang-el="ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ" class="lang">ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ</a></li>
             
 
         </ul>
@@ -1062,12 +1063,35 @@ window.addEventListener('resize', function () {
 });
   </script>
   <script>
+    
     function changeLanguage(lang) {
-        const elements = document.querySelectorAll('[data-lang-en], [data-lang-el]');
+        /*const elements = document.querySelectorAll('[data-lang-en], [data-lang-el]');
         elements.forEach(element => {
             element.textContent = element.getAttribute(`data-lang-${lang}`);
+        });*/
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.set('lang', lang);
+        window.location.href = currentUrl.toString();
+    }
+
+    // Function to set the language based on the URL parameter
+    function setLanguageFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang') || 'el'; // Default to English
+        const elements = document.querySelectorAll('[data-lang-en], [data-lang-el]');
+        
+        elements.forEach(element => {
+            const textElement = element.querySelector('.dropdown-text');
+            if (textElement) {
+                textElement.textContent = element.getAttribute(`data-lang-${lang}`);
+            } else {
+                element.textContent = element.getAttribute(`data-lang-${lang}`);
+            }
         });
     }
+
+    // Call the function on page load
+    window.onload = setLanguageFromUrl;
   </script>
       
 </body>
