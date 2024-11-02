@@ -59,18 +59,24 @@
        .text-lang:hover{
         cursor: pointer;
        }
-       .footer{
-        
-        position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-       }
-       
-       @media all and (max-width: 800px) {
+       .footer {
+    position: relative;
+    bottom: 0;
+    top: 35%
+    
+}
+
+@media all and (max-height: 900px) {
     .footer{
         position: relative;
-        top: 30%;
+        top: 25%;
+        
+    }
+}
+@media all and (max-width: 800px) {
+    .footer{
+        position: relative;
+        top: 25%;
         
     }
 }

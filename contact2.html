@@ -61,16 +61,24 @@
         cursor: pointer;
        }
        
-.footer {
+       .footer {
     position: relative;
-    top: 20%;
+    bottom: 0;
+    top: 35%
     
-    
+}
+
+@media all and (max-height: 900px) {
+    .footer{
+        position: relative;
+        top: 25%;
+        
+    }
 }
 @media all and (max-width: 800px) {
     .footer{
         position: relative;
-        top: 20%;
+        top: 25%;
         
     }
 }
