@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <link rel="icon" href="images/Democritus_University_of_Thrace_New_Logo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
+      
+
+
+        
         .swiper-slide{
             display: flex;
             flex-direction: column;
@@ -120,7 +125,6 @@
         justify-items: center;
         justify-content: space-between;
         */
-        
        }
 
        .nav-bar ul li img:hover{
@@ -129,8 +133,11 @@
        .text-lang:hover{
         cursor: pointer;
        }
+       .text-lang{
+        font-size: 15px;
+       }
        
-        
+
         
         
     </style>
@@ -139,11 +146,88 @@
 
 <body>
   <!--
-  <div class="nav-bar2 nav-bar3" style="background-color: #ffffff;">
+  <div id="fontSizeControls">
+    <button onclick="changeFontSize('increase')">A+</button>
+    <button onclick="changeFontSize('decrease')">A-</button>
+</div>
+  -->
+  <div class="icon-container">
+    <img id="amea_btn" src="images/accessibility_second_effort.png" alt="Icon" class="floating-icon">
+</div>
+<div class="sidebar" id="sidebar_amea">
+  <div class="top">
+    <div class="logo">
+      <i id="universal-access" class='bx bx-universal-access'></i>
+      <span id="amea_txt" style="font-family: 'CalibriBold';">ΑΜΕΑ</span>
+      
+    </div>
+    <button class="close-btn" onclick="closeSidebar()">×</button>
+  </div>
+  <ul>
+    <li>
+      <a>
+        <i class='bx bx-font-size' ></i>
+        <span class="nav-item" onclick="increaseFontSize(2)"> Αύξηση μεγέθους</span>
+      </a>
+      
+    </li>
+    <li>
+      <a>
+        <i class='bx bx-font-size' ></i>
+        <span class="nav-item" onclick="decreaseFontSize(2)"> Μείωση μεγέθους</span>
+      </a>
+      
+    </li>
+    <li>
+      <a>
+        <i class='bx bx-font-family' ></i>
+        <span class="nav-item" onclick="dyslexicFontApply()">Για δυσλεκτικούς</span>
+      </a>
+      
+    </li>
+    <li>
+      <a>
+        <i class='bx bx-adjust'></i>
+        <span class="nav-item" onclick="contrastApply()">Αντίθεση</span>
+      </a>
+      
+    </li>
+    <li>
+      <a>
+        <i class='bx bx-palette' ></i>
+        <span class="nav-item" onclick="reverseColorsApply()">Αντίθετα χρώματα</span>
+      </a>
+      
+    </li>
+    <li>
+      <a>
+        <i class='bx bx-color-fill' ></i>
+        <span class="nav-item" onclick="grayScaleApply()">Γκρίζα χρώματα</span>
+      </a>
+      
+    </li>
+    <li>
+      <a>
+        <i class='bx bxs-color-fill' ></i>
+        <span class="nav-item" onclick="changeBackground()" >Αλλαγή φόντου</span>
+      </a>
+      
+    </li>
+    <li>
+      <a>
+        <i class='bx bx-revision'></i>
+        <span class="nav-item" onclick="reloadPage()">Επαναφορά</span>
+      </a>
+      
+    </li>
+  </ul>
+  
+</div>
+  <div class="nav-bar2 nav-bar3" style="background-color: #fff;">
     <ul>
       
       
-      <div class="flag-container" style="padding-top: 10px; padding-bottom: 10px;">
+      <div class="flag-container" style="padding-top: 10px;">
         <div class="flags_container">
           <img onclick="changeLanguage('en')" class="flag" src="images/uk flag.jpg"  alt="" style="width: 25px;  height: 14px;">
           <span class="text-lang" onclick="changeLanguage('en')">English</span>
@@ -161,13 +245,11 @@
 
     </ul>
   </div>
-  -->
-  
-  <div class="nav-bar2" style="background-color: #f0f1f5dd; ">
+  <div class="nav-bar2" style="background-color: #fff;">
       <ul>
         
         <li id="logo_dimokritus" style="box-shadow: none;" ><img  src="images/Democritus_University_of_Thrace_New_Logo.png"  alt="" style="width: 90px; "></li>
-        <li id="logo_erasmus" style="box-shadow: none;"><img  src="images/erasmus_logo.png"  alt="" style="width: 250px; "></li>
+        <li id="logo_erasmus" style="box-shadow: none;"><img  src="images/erasmus_logo.png"  alt="" style="width: 250px;"></li>
         
         
 
@@ -299,23 +381,8 @@
                 <li class="dropdown-item"><a href="#" style="font-size: 15px;" data-lang-en = "USEFUL DOCUMENTS" data-lang-el="ΧΡΗΣΙΜΑ ΕΝΤΥΠΑ">ΧΡΗΣΙΜΑ ΕΝΤΥΠΑ</a></li>
               </ul>
             </li>
-            <li><a href="contact.html" data-lang-en = "COMMUNICATION" data-lang-el="ΕΠΙΚΟΙΝΩΝΙΑ" class="lang">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
-            <li class="flag-container">
-              
-                <div class="flags_container">
-                  <img onclick="changeLanguage('en')" class="flag" src="images/uk flag.jpg"  alt="" style="width: 25px;  height: 15px;">
-                  
-        
-                </div><span style="color: #fff;">|</span>
-                  <div class="flags_container">
-        
-                    
-                    <img onclick="changeLanguage('el')" class="flag" src="images/greek flag.jpg"  alt="" style="width: 25px; height: 15px; padding: 0; ">
-        
-                  </div>
-                
-              
-            </li>
+            <li id="epikoinonia_nav_item"><a href="contact.html" data-lang-en = "COMMUNICATION" data-lang-el="ΕΠΙΚΟΙΝΩΝΙΑ" class="lang">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+            
 
         </ul>
         
@@ -418,7 +485,7 @@
           <div class="swiper-wrapper" >
             <div class="swiper-slide swiper-slide-news">
               <div class="card-news" onclick="location.href = 'news_page.html'">
-                <img src="images/boys-with-bags-girls-with-touristic-map-look-something-up-somewhere-old-city.jpeg" alt="Card Image"> 
+                <img src="images/boys-with-bags-girls-with-touristic-map-look-something-up-somewhere-old-city.jpeg" alt="Card Image" class="news_image"> 
                 <div class="card-content news-content">
                     <h3 class="card-title news-title">Erasmus+ Webinar</h3>
                     <p style="padding-bottom: 3px;" class="card-description news-description" data-lang-el="Παρακολουθείστε νεότερες εξελίξεις του προγράμματος Erasmus του ΔΠΘ" data-lang-en="Follow the latest developments of the Erasmus program of the DUTH" >
@@ -430,7 +497,7 @@
             </div>
             <div class="swiper-slide swiper-slide-news">
               <div class="card-news">
-                <img src="images/as-map-says-we-should-go-this-way.jpeg" alt="Card Image"> 
+                <img src="images/as-map-says-we-should-go-this-way.jpeg" alt="Card Image" class="news_image"> 
                 <div class="card-content news-content">
                     <h3 class="card-title news-title" data-lang-en = "Title" data-lang-el="Τίτλος">Τίτλος 2</h3>
                     <p class="card-description news-description" data-lang-en = "Description..." data-lang-el="Περιγραφή...">Περιγραφή...</p>
@@ -439,7 +506,7 @@
             </div>
             <div class="swiper-slide swiper-slide-news">
               <div class="card-news">
-                <img src="images/flight-booking-reservation-travel-destination-concept.jpeg" alt="Card Image"> 
+                <img src="images/flight-booking-reservation-travel-destination-concept.jpeg" alt="Card Image" class="news_image"> 
                 <div class="card-content news-content">
                     <h3 class="card-title news-title" data-lang-en = "Title" data-lang-el="Τίτλος">Τίτλος 3</h3>
                     <p class="card-description news-description" data-lang-en = "Description..." data-lang-el="Περιγραφή...">Περιγραφή...</p>
@@ -448,7 +515,7 @@
             </div>
             <div class="swiper-slide swiper-slide-news">
               <div class="card-news">
-                <img src="images/2687659.jpg" alt="Card Image"> 
+                <img src="images/2687659.jpg" alt="Card Image" class="news_image"> 
                 <div class="card-content news-content">
                     <h3 class="card-title news-title" data-lang-en = "Title" data-lang-el="Τίτλος">Τίτλος 4</h3>
                     <p class="card-description news-description" data-lang-en = "Description..." data-lang-el="Περιγραφή...">Περιγραφή...</p>
@@ -457,7 +524,7 @@
             </div>
             <div class="swiper-slide swiper-slide-news">
               <div class="card-news">
-              <img src="images/man-reading-newspaper.jpeg" alt="Card Image"> 
+              <img src="images/man-reading-newspaper.jpeg" alt="Card Image" class="news_image"> 
               <div class="card-content news-content">
                   <h3 class="card-title news-title" data-lang-en = "Title" data-lang-el="Τίτλος">Τίτλος 5</h3>
                   <p class="card-description news-description" data-lang-en = "Description..." data-lang-el="Περιγραφή...">Περιγραφή...</p>
@@ -467,7 +534,7 @@
             
               <div class="swiper-slide swiper-slide-news">
                 <div class="card-news">
-                <img src="images/man-reading-newspaper.jpeg" alt="Card Image"> 
+                <img src="images/man-reading-newspaper.jpeg" alt="Card Image" class="news_image"> 
                 <div class="card-content news-content">
                     <h3 class="card-title news-title" data-lang-en = "Title" data-lang-el="Τίτλος">Τίτλος 6</h3>
                     <p class="card-description news-description" data-lang-en = "Description..." data-lang-el="Περιγραφή...">Περιγραφή...</p>
@@ -477,7 +544,7 @@
             
               <div class="swiper-slide swiper-slide-news">
                 <div class="card-news">
-                <img src="images/man-reading-newspaper.jpeg" alt="Card Image"> 
+                <img src="images/man-reading-newspaper.jpeg" alt="Card Image" class="news_image"> 
                 <div class="card-content news-content">
                     <h3 class="card-title news-title" data-lang-en = "Title" data-lang-el="Τίτλος">Τίτλος 7</h3>
                     <p class="card-description news-description" data-lang-en = "Description..." data-lang-el="Περιγραφή...">Περιγραφή...</p>
@@ -488,7 +555,7 @@
             
               <div class="swiper-slide swiper-slide-news">
                 <div class="card-news">
-                <img src="images/man-reading-newspaper.jpeg" alt="Card Image"> 
+                <img src="images/man-reading-newspaper.jpeg" alt="Card Image" class="news_image" > 
                 <div class="card-content news-content">
                     <h3 class="card-title news-title" data-lang-en = "Title" data-lang-el="Τίτλος">Τίτλος 8</h3>
                     <p class="card-description news-description" data-lang-en = "Description..." data-lang-el="Περιγραφή...">Περιγραφή...</p>
@@ -498,7 +565,7 @@
             
               <div class="swiper-slide swiper-slide-news">
                 <div class="card-news">
-                <img src="images/man-reading-newspaper.jpeg" alt="Card Image"> 
+                <img src="images/man-reading-newspaper.jpeg" alt="Card Image" class="news_image"> 
                 <div class="card-content news-content">
                     <h3 class="card-title news-title" data-lang-en = "Title" data-lang-el="Τίτλος">Τίτλος 9</h3>
                     <p class="card-description news-description" data-lang-en = "Description..." data-lang-el="Περιγραφή...">Περιγραφή...</p>
@@ -528,7 +595,7 @@
                   
                   <div>
                     <div class="counter">
-                      <span id="number_other2">0</span>
+                      <span class="stat_number" id="number_other2">0</span>
                   </div>
                     
                   </div>
@@ -542,7 +609,7 @@
                   
                   <div>
                     <div class="counter">
-                      <span id="number_other">0</span>
+                      <span class="stat_number" id="number_other">0</span>
                   </div>
                     
                   </div>
@@ -556,7 +623,7 @@
                       
                       <div>
                         <div class="counter">
-                          <span id="number_students">0</span>
+                          <span class="stat_number" id="number_students">0</span>
                       </div>
                         
                       </div>
@@ -571,7 +638,7 @@
                   
                   <div>
                     <div class="counter">
-                      <span id="number_other1">0</span>
+                      <span class="stat_number" id="number_other1">0</span>
                   </div>
                     
                   </div>
@@ -864,87 +931,7 @@
             })
             
 
-            /*
-            item.addEventListener('mouseenter',(event) => {
-              event.preventDefault(); // Prevent the default anchor behavior
-              var parent_li = item.parentElement;
-              var dropdown_ul = parent_li.querySelector('.dropdown')
-              var dropdownItemList = dropdown_ul.querySelectorAll('.dropdown-item')
-              var innerDropdownItemList = dropdown_ul.querySelectorAll('.inner-dropdown-item')
-              var icon = item.querySelector('i')
-              dropdown_ul.style.display = dropdown_ul.style.display === 'block' ? 'none' : 'block';
-              
-              if(dropdown_ul.style.display == 'block'){
-                icon.classList.remove('fas', 'fa-caret-down');
-                if(item.classList.contains('inner-dropdown-link')){
-                  icon.classList.add('fas', 'fa-caret-up');
-                  
-                }else{
-                  icon.classList.add('fas', 'fa-caret-up');
-                }
-                
-                
-              }else{
-                if(item.classList.contains('inner-dropdown-link')){
-                  icon.classList.remove('fas', 'fa-caret-up');
-                }else{
-                  icon.classList.remove('fas', 'fa-caret-up');
-                }
-                
-                icon.classList.add('fas', 'fa-caret-down');
-              }
-              dropdownItemList.forEach((i,index) => {
-                  i.style.display = i.style.display === 'block' ? 'none' : 'block';
-                  i.style.margin = "0"
-                  i.style.padding = "0"
-                  
-                  
-              })
-              innerDropdownItemList.forEach((i,index) =>{
-                i.style.display = i.style.display === 'flex' ? 'none' : 'flex';
-                i.style.margin = '0 auto'
-                
-                i.style.overflow = "auto"
-              })
-              //event.stopPropagation(); // Prevent click event from bubbling up
-            })
-              */
-
-              /*
-            item.addEventListener('mouseenter', (event) => {
-                event.preventDefault();
-                var parent_li = item.parentElement;
-                var dropdown_ul = parent_li.querySelector('.dropdown');
-                var icon = item.querySelector('i');
-
-                // Show the dropdown with transition
-                dropdown_ul.classList.add('show');
-                icon.classList.remove('fas', 'fa-caret-down');
-                icon.classList.add('fas', 'fa-caret-up');
-
-                // Optional: Show dropdown items
-                dropdown_ul.querySelectorAll('.dropdown-item').forEach((i) => {
-                    i.style.display = 'block';
-                });
-            });
-
-            item.addEventListener('mouseleave', (event) => {
-                event.preventDefault();
-                var parent_li = item.parentElement;
-                var dropdown_ul = parent_li.querySelector('.dropdown');
-                var icon = item.querySelector('i');
-
-                // Hide the dropdown with transition
-                dropdown_ul.classList.remove('show');
-                icon.classList.remove('fas', 'fa-caret-up');
-                icon.classList.add('fas', 'fa-caret-down');
-
-                // Optional: Hide dropdown items
-                dropdown_ul.querySelectorAll('.dropdown-item').forEach((i) => {
-                    i.style.display = 'none';
-                });
-            });
-            */
+            
         })
         
 
@@ -1081,7 +1068,6 @@ window.addEventListener('resize', function () {
 });
   </script>
   <script>
-    
     function changeLanguage(lang) {
         localStorage.setItem('preferredLanguage', lang);
         document.documentElement.setAttribute('lang', lang);
@@ -1090,14 +1076,159 @@ window.addEventListener('resize', function () {
             el.textContent = el.getAttribute('data-lang-' + lang);
         });
     }
-    
+
     // On page load
     document.addEventListener('DOMContentLoaded', () => {
         const preferredLanguage = localStorage.getItem('preferredLanguage') || 'el';
         changeLanguage(preferredLanguage);
     });
+/*const elements = document.querySelectorAll('[data-lang-en], [data-lang-el]');
+        elements.forEach(element => {
+            element.textContent = element.getAttribute(`data-lang-${lang}`);
+        });*/
+    /*function changeLanguage(lang) {
+        
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.set('lang', lang);
+        window.location.href = currentUrl.toString();
+    }
+
+    // Function to set the language based on the URL parameter
+    function setLanguageFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang') || 'el'; // Default to English
+        const elements = document.querySelectorAll('[data-lang-en], [data-lang-el]');
+        
+        elements.forEach(element => {
+            const textElement = element.querySelector('.dropdown-text');
+            if (textElement) {
+                textElement.textContent = element.getAttribute(`data-lang-${lang}`);
+            } else {
+                element.textContent = element.getAttribute(`data-lang-${lang}`);
+            }
+        });
+    }
+
+    // Call the function on page load
+    window.onload = setLanguageFromUrl;
+    */
   </script>
-      
+      <script>
+        // Function to increase font size of all elements
+        function increaseFontSize(amount) {
+            // Select all elements in the document
+            var elements = document.querySelectorAll('body *:not(.sidebar *)');
+            
+            // Loop through each element and increase its font size
+            elements.forEach(element => {
+                // Get the current font size
+                const currentSize = window.getComputedStyle(element).fontSize;
+                // Convert the size to a number and increase it
+                const newSize = parseFloat(currentSize) + amount;
+                // Apply the new font size
+                element.style.fontSize = newSize + 'px';
+            });
+        }
+        // Function to decrease font size of all elements
+        function decreaseFontSize(amount) {
+            // Select all elements in the document
+            var elements = document.querySelectorAll('body *:not(.sidebar *)');
+            
+            // Loop through each element and decrease its font size
+            elements.forEach(element => {
+                // Get the current font size
+                const currentSize = window.getComputedStyle(element).fontSize;
+                // Convert the size to a number and decrease it
+                const newSize = parseFloat(currentSize) - amount;
+                // Apply the new font size
+                element.style.fontSize = newSize + 'px';
+            });
+        }
+        function dyslexicFontApply(){
+          // Select all elements in the document
+          var elements = document.querySelectorAll('body *:not(.sidebar *):not(.fas)');
+
+          // Loop through each element
+          elements.forEach(element => {
+              
+              element.style.fontFamily = 'DyslexicFont';
+          });
+        }
+        function reverseColorsApply(){
+          // Select all elements in the document
+          var elements = document.querySelectorAll('*:not(img):not(section *):not(#universal-access):not(#amea_txt):not(#epikoinonia_nav_item)');
+          var body = document.querySelector('body')
+
+
+
+          // Loop through each element
+          elements.forEach(element => {
+              
+              element.style.filter = 'invert(100%)'
+          });
+          document.getElementById('#sidebar_amea').style.position='fixed'
+          
+          
+          
+        }
+        function grayScaleApply(){
+          // Select all elements in the document
+          var elements = document.querySelectorAll('body *:not(.sidebar *)');
+          const body = document.querySelector('body')
+          const footer = document.querySelector('footer')
+          const waves = document.querySelectorAll('.wave')
+
+          // Loop through each element
+          elements.forEach(element => {
+              
+              element.style.filter = 'grayscale(100%)'
+              
+              
+          });
+          body.style.background = 'gray'
+          footer.style.background = 'black'
+          waves.forEach(wave =>{
+            wave.style.background = 'black'
+          })
+        }
+        function contrastApply(){
+          // Select all elements in the document
+          var elements = document.querySelectorAll('body *');
+
+          // Loop through each element
+          elements.forEach(element => {
+              
+              element.style.filter = 'contrast(120%)'
+          });
+        }
+    </script>
+    <script>
+      let btn = document.querySelector("#amea_btn")
+      let sidebar = document.querySelector('.sidebar')
+
+      btn.onclick = function() {
+        sidebar.classList.toggle('active_sidebar')
+      }
+    </script>
+    <script>
+      // Function to reload the current page
+      function reloadPage() {
+          location.reload();
+      }
+    </script>
+    <script>
+      function closeSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle('active_sidebar')
+      }
+    </script>
+    <script>
+      function changeBackground(){
+        const body = document.querySelector('body');
+        body.style.background = "#7b1511"
+      }
+    </script>
+
 </body>
 
 </html>
