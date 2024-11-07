@@ -184,8 +184,10 @@
     z-index: 1000000;
     overflow-y: auto;
     white-space: nowrap;
+    display: none;
 }
 .nav_sidebar.active_nav_sidebar {
+    
     padding: 0.4rem 0.8rem 0.8rem 0;
     width: calc(100% - 250px);
 }
@@ -259,6 +261,14 @@ body{
 }
 
 /* Navigation bar */
+
+#epikoinonia_nav_item{
+    display: block;
+}
+#epikoinonia_nav_item2{
+    display: none;
+}
+
 .nav-bar{
     
     /*background:#242834;*/
@@ -1013,6 +1023,9 @@ section h2{
         align-items: center;
         
     }
+    .nav_sidebar{
+        display: block;
+    }
     #hamburger{
         display: block;
         float: inline-end;
@@ -1027,6 +1040,12 @@ section h2{
     }
     #epikoinonia_side_nav_item{
         display: none;
+    }
+    #epikoinonia_nav_item{
+        display: none;
+    }
+    #epikoinonia_nav_item2{
+        display: block;
     }
     #kinitikotitaFit_nav_item{
         display: none;
@@ -1044,6 +1063,7 @@ section h2{
     .nav-bar ul li a{
         font-size: 17px;
     }
+    
     
   
   }

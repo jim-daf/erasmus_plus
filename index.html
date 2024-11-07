@@ -366,7 +366,7 @@
                 <li class="dropdown-item"><a href="#" style="font-size: 15px;" data-lang-en = "USEFUL DOCUMENTS" data-lang-el="ΧΡΗΣΙΜΑ ΕΝΤΥΠΑ">ΧΡΗΣΙΜΑ ΕΝΤΥΠΑ</a></li>
               </ul>
             </li>
-            <li id="epikoinonia_nav_item"><a href="contact.html" data-lang-en = "COMMUNICATION" data-lang-el="ΕΠΙΚΟΙΝΩΝΙΑ" class="lang">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+            <li id="epikoinonia_nav_item2"><a href="contact.html" data-lang-en = "COMMUNICATION" data-lang-el="ΕΠΙΚΟΙΝΩΝΙΑ" class="lang">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
 
             <li>
               <a class="dropdown-link" id="mixedLink">
@@ -394,7 +394,8 @@
                 <li class="dropdown-item"><a href="#" style="font-size: 15px;" data-lang-en = "USEFUL DOCUMENTS" data-lang-el="ΧΡΗΣΙΜΑ ΕΝΤΥΠΑ">ΧΡΗΣΙΜΑ ΕΝΤΥΠΑ</a></li>
               </ul>
             </li>
-            
+            <li id="epikoinonia_nav_item"><a href="contact.html" data-lang-en = "COMMUNICATION" data-lang-el="ΕΠΙΚΟΙΝΩΝΙΑ" class="lang">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
+
 
         </ul>
         <div class="hamburger" id="hamburger">
@@ -1047,6 +1048,9 @@
         hamburger.addEventListener('click', () => {
 
           nav_sidebar.classList.toggle('active_nav_sidebar')  
+          if(sidebar.classList.contains('active_sidebar')){
+            sidebar.classList.toggle('active_sidebar')
+          }
         });
 
         
@@ -1383,10 +1387,12 @@ window.addEventListener('resize', function () {
     <script>
       let btn = document.querySelector("#amea_btn")
       let sidebar = document.querySelector('.sidebar')
-
+      //var nav_sidebarr = document.querySelector('.nav_sidebar')
       btn.onclick = function() {
         sidebar.classList.toggle('active_sidebar')
-        
+        if(nav_sidebar.classList.contains('active_nav_sidebar')){
+            nav_sidebar.classList.toggle('active_nav_sidebar')
+          }
       }
     </script>
     <script>
